@@ -31,6 +31,8 @@ jobs:
         run: |
           git clone https://x-access-token:${PAT_GITHUB}@github.com/iamCristYE/lemino-private.git
           cd lemino-private
+          git config user.name "GitHub Actions Bot"
+          git config user.email "<>"
           python ft.py
           git add *
           git commit -m "Update warnings.json [$(date -u)]" || echo "No changes to commit"

@@ -1,10 +1,10 @@
-name: lemino_cms
+name: cms_certain
 
 on:
   workflow_dispatch:
 
 jobs:
-  lemino_cms:
+  cms_certain:
     runs-on: ubuntu-latest
 
     steps:
