@@ -10,9 +10,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
@@ -28,10 +25,25 @@ jobs:
           pip install python-telegram-bot
           pip install PyGithub
 
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+            ref: main
+
       - name: Run Python script
         run: |
-          python cms.py
+            git clone https://x-access-token:${PAT_GITHUB}@github.com/iamCristYE/lemino-private.git
+            cd lemino-private
+            git config user.name "GitHub Actions Bot"
+            git config user.email "<>"
+            python cms.py
+            git add *
+            git commit -m "Update cms.json [$(date -u)]" || echo "No changes to commit"
+            git config pull.rebase true 
+            git pull
+            git push || echo "nothing to commit"
         env:
+            PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
             github_token: ${{ secrets.PAT_GITHUB }}
             bot_token: ${{ secrets.BOT_TOKEN }}
             chat_id: ${{ secrets.CHAT_ID_COVER }}
