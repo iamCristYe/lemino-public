@@ -1,4 +1,4 @@
-name: lemino
+name: ft
 
 on:
   schedule:
@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  lemino:
+  ft:
     runs-on: ubuntu-latest
 
     steps:
