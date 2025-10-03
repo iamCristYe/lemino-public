@@ -32,7 +32,7 @@ jobs:
         run: |
           python cms.py
         env:
-            github_token: ${{ secrets.Token_GitHub }}
+            github_token: ${{ secrets.PAT_GITHUB }}
             bot_token: ${{ secrets.BOT_TOKEN }}
             chat_id: ${{ secrets.CHAT_ID_COVER }}
 
