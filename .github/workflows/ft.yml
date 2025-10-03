@@ -28,8 +28,6 @@ jobs:
             ref: main
 
       - name: Clone private repo and run code
-        env:
-          PAT_GITHUB: ${{ secrets.PAT_GITHUB }}
         run: |
           git clone https://x-access-token:${PAT_GITHUB}@github.com/iamCristYE/lemino-private.git
           cd lemino-private
