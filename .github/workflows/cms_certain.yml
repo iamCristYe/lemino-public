@@ -1,6 +1,8 @@
 name: cms_certain
 
 on:
+  schedule:
+    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 jobs:
