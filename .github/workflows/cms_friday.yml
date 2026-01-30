@@ -1,4 +1,4 @@
-name: cms_certain
+name: cms_friday
 
 on:
   schedule:
@@ -34,9 +34,9 @@ jobs:
           cd lemino-private
           git config user.name "GitHub Actions Bot"
           git config user.email "<>"
-          python cms_certain.py
-          git add cms_certain
-          git commit -m "Update cms_certain.json [$(date -u)]" || echo "No changes to commit"
+          python cms_friday.py
+          git add cms_friday.json
+          git commit -m "Update cms_friday.json [$(date -u)]" || echo "No changes to commit"
           git config pull.rebase true 
           git pull
           git push || echo "nothing to commit"
